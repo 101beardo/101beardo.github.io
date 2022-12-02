@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react';
 import './App.css';
 import About from './components/about/about';
 import Contact from './components/contact/contact';
@@ -10,15 +11,15 @@ import Skills from './components/Skills/skills';
 
 function App() {
   return (
-    <div className="App">
-     <Header/>
+    <Box   bgColor="cyan.100" className="App">
      <Navbar/>
+     <Header/>
      <About/>
      <Skills/>
      <Projects/>
      <Contact/>
      <Footer/>
-    </div>
+    </Box>
   );
 }
 
