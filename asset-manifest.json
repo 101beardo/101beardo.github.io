@@ -1,16 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.31d6cfe0.css",
-    "main.js": "/static/js/main.57d77801.js",
+    "main.js": "/static/js/main.47e56c84.js",
     "static/js/787.128fc6e9.chunk.js": "/static/js/787.128fc6e9.chunk.js",
+    "static/media/tripoto.png": "/static/media/tripoto.0d73435501b8fb29c086.png",
     "static/media/me.png": "/static/media/me.c37ebbacc978a9482d5a.png",
-    "static/media/Tarun-Sharma-Resume.pdf": "/static/media/Tarun-Sharma-Resume.3c82c8ef0aa214cb6628.pdf",
+    "static/media/greenhouse.io.png": "/static/media/greenhouse.io.af6e990aaa7546c3498e.png",
     "index.html": "/index.html",
-    "main.57d77801.js.map": "/static/js/main.57d77801.js.map",
+    "main.47e56c84.js.map": "/static/js/main.47e56c84.js.map",
     "787.128fc6e9.chunk.js.map": "/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.57d77801.js"
+    "static/js/main.47e56c84.js"
   ]
 }
