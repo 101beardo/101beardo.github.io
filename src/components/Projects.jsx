@@ -19,7 +19,7 @@ const Projects = () => {
         </Text>
 
 
-        <Box align="center" mt="80px" w={["80%","90%","80%"]} boxShadow='dark-lg' >
+        <Box align="center" mt="80px" w={["100%","90%","80%"]} boxShadow='dark-lg' >
 
 
         <Box>
@@ -73,7 +73,7 @@ const Projects = () => {
                 transitionDuration:"300ms",
 
                       boxShadow:'dark-lg'
-                      }}borderRadius="15%" boxShadow='2xl' ><CardBody><Box color="blue.900"><Icon boxSize={["40px","50px","60px"]} as={SiJavascript} /><Text fontSize={["8px", "10.455px", "15px"]} >JavaScript</Text></Box></CardBody></Card>
+                      }}borderRadius="15%" boxShadow='2xl' ><CardBody><Box color="blue.900"><Icon boxSize={["40px","50px","60px"]} as={SiJavascript} /><Text fontSize={["7.8px", "10.455px", "15px"]} >JavaScript</Text></Box></CardBody></Card>
              
               <Card _hover={{
                 transitionDuration:"300ms",
@@ -132,7 +132,7 @@ const Projects = () => {
 
 
 
-        <Box align="center" mt="80px" w={["80%","90%","80%"]} boxShadow='dark-lg' >
+        <Box align="center" mt="80px" w={["100%","90%","80%"]} boxShadow='dark-lg' >
 
 
 <Box>
@@ -186,7 +186,7 @@ const Projects = () => {
         transitionDuration:"300ms",
 
               boxShadow:'dark-lg'
-              }}borderRadius="15%" boxShadow='2xl' ><CardBody><Box color="blue.900"><Icon boxSize={["40px","50px","60px"]} as={SiJavascript} /><Text fontSize={["8px", "10.455px", "15px"]} >JavaScript</Text></Box></CardBody></Card>
+              }}borderRadius="15%" boxShadow='2xl' ><CardBody><Box color="blue.900"><Icon boxSize={["40px","50px","60px"]} as={SiJavascript} /><Text fontSize={["7.8px", "10.455px", "15px"]} >JavaScript</Text></Box></CardBody></Card>
      
       <Card _hover={{
         transitionDuration:"300ms",
