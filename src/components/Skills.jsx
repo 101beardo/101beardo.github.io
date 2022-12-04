@@ -34,7 +34,7 @@ const Skills = () => {
                 transitionDuration:"300ms",
 
                       boxShadow:'dark-lg'
-                      }}borderRadius="15%" boxShadow='2xl' ><CardBody><Box color="blue.900"><Icon boxSize={["40px","50px","60px"]} as={SiJavascript} /><Text fontSize={["8px", "10.455px", "15px"]} >JavaScript</Text></Box></CardBody></Card>
+                      }}borderRadius="15%" boxShadow='2xl' ><CardBody><Box color="blue.900"><Icon boxSize={["40px","50px","60px"]} as={SiJavascript} /><Text fontSize={["7.8px", "10.455px", "15px"]} >JavaScript</Text></Box></CardBody></Card>
               <Card _hover={{
                 transitionDuration:"300ms",
 

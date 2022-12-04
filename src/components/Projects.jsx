@@ -19,7 +19,7 @@ const Projects = () => {
         </Text>
 
 
-        <Box align="center" mt="80px" w={["100%","100%","80%"]} boxShadow='dark-lg' >
+        <Box align="center" mt="80px" w={["80%","90%","80%"]} boxShadow='dark-lg' >
 
 
         <Box>
@@ -132,7 +132,7 @@ const Projects = () => {
 
 
 
-        <Box align="center" mt="80px" w={["100%","100%","80%"]} boxShadow='dark-lg' >
+        <Box align="center" mt="80px" w={["80%","90%","80%"]} boxShadow='dark-lg' >
 
 
 <Box>
