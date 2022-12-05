@@ -4,7 +4,7 @@ import GitHubCalendar from 'react-github-calendar'
 
 const Github = () => {
   return (
-    <Box >
+    <Box w={["100%","100%","100%"]} >
         <Text  
           fontWeight="bold" 
           fontSize="30px"
@@ -30,9 +30,9 @@ const Github = () => {
 
 
             <Box >
-            <Image boxShadow='dark-lg' w={["85%","70%","30%"]} borderRadius="2%" mt="50px" src="https://github-readme-stats.vercel.app/api/top-langs?username=101beardo&show_icons=true&locale=en&layout=compact" alt="101beardo" />
-            <Image boxShadow='dark-lg' w={["85%","70%","30%"]} borderRadius="2%" mt="50px"  src="https://github-readme-streak-stats.herokuapp.com/?user=101beardo&" alt="101beardo" />
-            <Image boxShadow='dark-lg' w={["85%","70%","30%"]} borderRadius="2%" mt="50px"  src="https://github-readme-stats.vercel.app/api?username=101beardo&show_icons=true&locale=en" alt="101beardo" />
+            <Image boxShadow='dark-lg' w={["85%","70%","50%"]} borderRadius="2%" mt="50px" src="https://github-readme-stats.vercel.app/api/top-langs?username=101beardo&show_icons=true&locale=en&layout=compact" alt="101beardo" />
+            <Image boxShadow='dark-lg' w={["85%","70%","50%"]} borderRadius="2%" mt="50px"  src="https://github-readme-streak-stats.herokuapp.com/?user=101beardo&" alt="101beardo" />
+            <Image boxShadow='dark-lg' w={["85%","70%","50%"]} borderRadius="2%" mt="50px"  src="https://github-readme-stats.vercel.app/api?username=101beardo&show_icons=true&locale=en" alt="101beardo" />
             </Box>
 
             

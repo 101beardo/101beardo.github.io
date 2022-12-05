@@ -193,7 +193,7 @@ const Projects = () => {
 
           <Box>
           {/* -Two buttons: GitHub, and Deployment/Video */}
-          <Box> 
+          <Box  pr="55px" > 
               <Link 
                   style={{ textDecoration: 'none' }}
                   target="_blank"   
@@ -408,7 +408,7 @@ const Projects = () => {
 
   <Box>
   {/* -Two buttons: GitHub, and Deployment/Video */}
-  <Box> 
+  <Box pr="55px" > 
       <Link 
           style={{ textDecoration: 'none' }}  
           target="_blank" 
