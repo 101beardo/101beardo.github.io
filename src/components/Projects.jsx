@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardBody, Icon, Image, Link, Text } from '@chakra-ui/react'
+import { Box, Button, Icon, Image, Link, Text } from '@chakra-ui/react'
 import React from 'react';
 import { SiHtml5,SiCss3,SiJavascript } from "react-icons/si";
 import {BsGithub} from "react-icons/bs"
@@ -57,31 +57,133 @@ const Projects = () => {
 
           <Box>
           {/* - Tech Stacks used in the project are highlighted */}
-          <Box  >
-            <SimpleGrid mt={["5px","7px","10px"]} align="center" w="65%" columns={[2, 3, 4]} spacing='80px'>
-              <Card _hover={{
-                      boxShadow:'dark-lg',
-                      transitionDuration:"300ms",
-                      size:"80px"
-                      }} borderRadius="15%" boxShadow='2xl' ><CardBody><Box color="blue.900"><Icon boxSize={["40px","50px","60px"]}  as={SiHtml5} /><Text fontSize={["8px", "10.455px", "15px"]} > HTML</Text></Box></CardBody></Card>
-              <Card _hover={{
-                transitionDuration:"300ms",
+          <Box >
+    <SimpleGrid  mt={["5px","7px","10px"]}  w="75%" columns={[2, 3, 4]} spacing='80px'>
+     
+      
+              {/* HTML */}
+              <Box 
+                _hover={{
+                        boxShadow:'dark-lg',
+                        transitionDuration:"300ms",
+                      }} 
+                borderRadius="15%" 
+                boxShadow='2xl'
+                boxSize={["80px","90px","125px"]}
+                color="blue.900"
+                
+                >
+                  <Icon 
+                      h="50%"
+                      w="70%"
+                      mt="20px"
+                      as={SiHtml5} 
+                      
+                    />
+                      <Text  
+                        
+                        fontSize={["8px", "10.455px", "15px"]} 
+                        >
+                        HTML
+                      </Text>         
+              </Box>
 
-                      boxShadow:'dark-lg'
-                      }}borderRadius="15%" boxShadow='2xl' ><CardBody><Box color="blue.900"><Icon boxSize={["40px","50px","60px"]} as={SiCss3} /><Text fontSize={["8px", "10.455px", "15px"]} >CSS</Text></Box></CardBody></Card>
-              <Card _hover={{
-                transitionDuration:"300ms",
 
-                      boxShadow:'dark-lg'
-                      }}borderRadius="15%" boxShadow='2xl' ><CardBody><Box color="blue.900"><Icon boxSize={["40px","50px","60px"]} as={SiJavascript} /><Text fontSize={["7.8px", "10.455px", "15px"]} >JavaScript</Text></Box></CardBody></Card>
+
              
-              <Card _hover={{
-                transitionDuration:"300ms",
-                      boxShadow:'dark-lg'
-                      }}borderRadius="15%" boxShadow='2xl' ><CardBody><Box color="blue.900"><Icon boxSize={["40px","50px","60px"]} as={BsGithub} /><Text fontSize={["8px", "10.455px", "15px"]} >Git</Text>  </Box></CardBody></Card>
+
+              {/* CSS */}
+              <Box 
+                _hover={{
+                        boxShadow:'dark-lg',
+                        transitionDuration:"300ms",
+                      }} 
+                borderRadius="15%" 
+                boxShadow='2xl'
+                boxSize={["80px","90px","125px"]}
+                color="blue.900"
+                
+                >
+                  <Icon 
+                      h="50%"
+                      w="70%"
+                      mt="20px"
+                      as={SiCss3} 
+                      
+                    />
+                      <Text  
+                        
+                        fontSize={["8px", "10.455px", "15px"]} 
+                        >
+                        CSS
+                      </Text>         
+              </Box>
+
               
-            </SimpleGrid>
-          </Box>
+              
+              
+              
+              
+              {/* JavaScript */}
+              
+              <Box 
+                _hover={{
+                        boxShadow:'dark-lg',
+                        transitionDuration:"300ms",
+                      }} 
+                borderRadius="15%" 
+                boxShadow='2xl'
+                boxSize={["80px","90px","125px"]}
+                color="blue.900"
+                
+                >
+                  <Icon 
+                      h="50%"
+                      w="70%"
+                      mt="20px"
+                      as={SiJavascript} 
+                      
+                    />
+                      <Text  
+                        
+                        fontSize={["8px", "10.455px", "15px"]} 
+                        >
+                        JavaScript
+                      </Text>         
+              </Box>
+
+              <Box 
+                _hover={{
+                        boxShadow:'dark-lg',
+                        transitionDuration:"300ms",
+                      }} 
+                borderRadius="15%" 
+                boxShadow='2xl'
+                boxSize={["80px","90px","125px"]}
+                color="blue.900"
+                
+                >
+                  <Icon 
+                      h="50%"
+                      w="70%"
+                      mt="20px"
+                      as={BsGithub} 
+                      
+                    />
+                      <Text  
+                        
+                        fontSize={["8px", "10.455px", "15px"]} 
+                        >
+                        Git Hub
+                      </Text>         
+              </Box>
+
+
+
+
+
+    </SimpleGrid>
+  </Box>
 
 
 
@@ -170,29 +272,131 @@ const Projects = () => {
 
   <Box>
   {/* - Tech Stacks used in the project are highlighted */}
-  <Box  >
-    <SimpleGrid mt={["5px","7px","10px"]} align="center" w="65%" columns={[2, 3, 4]} spacing='80px'>
-      <Card _hover={{
-              boxShadow:'dark-lg',
-              transitionDuration:"300ms",
-              size:"80px"
-              }} borderRadius="15%" boxShadow='2xl' ><CardBody><Box color="blue.900"><Icon boxSize={["40px","50px","60px"]}  as={SiHtml5} /><Text fontSize={["8px", "10.455px", "15px"]} > HTML</Text></Box></CardBody></Card>
-      <Card _hover={{
-        transitionDuration:"300ms",
-
-              boxShadow:'dark-lg'
-              }}borderRadius="15%" boxShadow='2xl' ><CardBody><Box color="blue.900"><Icon boxSize={["40px","50px","60px"]} as={SiCss3} /><Text fontSize={["8px", "10.455px", "15px"]} >CSS</Text></Box></CardBody></Card>
-      <Card _hover={{
-        transitionDuration:"300ms",
-
-              boxShadow:'dark-lg'
-              }}borderRadius="15%" boxShadow='2xl' ><CardBody><Box color="blue.900"><Icon boxSize={["40px","50px","60px"]} as={SiJavascript} /><Text fontSize={["7.8px", "10.455px", "15px"]} >JavaScript</Text></Box></CardBody></Card>
+  <Box >
+    <SimpleGrid  mt={["5px","7px","10px"]}  w="75%" columns={[2, 3, 4]} spacing='80px'>
      
-      <Card _hover={{
-        transitionDuration:"300ms",
-              boxShadow:'dark-lg'
-              }}borderRadius="15%" boxShadow='2xl' ><CardBody><Box color="blue.900"><Icon boxSize={["40px","50px","60px"]} as={BsGithub} /><Text fontSize={["8px", "10.455px", "15px"]} >Git</Text>  </Box></CardBody></Card>
       
+              {/* HTML */}
+              <Box 
+                _hover={{
+                        boxShadow:'dark-lg',
+                        transitionDuration:"300ms",
+                      }} 
+                borderRadius="15%" 
+                boxShadow='2xl'
+                boxSize={["80px","90px","125px"]}
+                color="blue.900"
+                
+                >
+                  <Icon 
+                      h="50%"
+                      w="70%"
+                      mt="20px"
+                      as={SiHtml5} 
+                      
+                    />
+                      <Text  
+                        
+                        fontSize={["8px", "10.455px", "15px"]} 
+                        >
+                        HTML
+                      </Text>         
+              </Box>
+
+
+
+             
+
+              {/* CSS */}
+              <Box 
+                _hover={{
+                        boxShadow:'dark-lg',
+                        transitionDuration:"300ms",
+                      }} 
+                borderRadius="15%" 
+                boxShadow='2xl'
+                boxSize={["80px","90px","125px"]}
+                color="blue.900"
+                
+                >
+                  <Icon 
+                      h="50%"
+                      w="70%"
+                      mt="20px"
+                      as={SiCss3} 
+                      
+                    />
+                      <Text  
+                        
+                        fontSize={["8px", "10.455px", "15px"]} 
+                        >
+                        CSS
+                      </Text>         
+              </Box>
+
+              
+              
+              
+              
+              
+              {/* JavaScript */}
+              
+              <Box 
+                _hover={{
+                        boxShadow:'dark-lg',
+                        transitionDuration:"300ms",
+                      }} 
+                borderRadius="15%" 
+                boxShadow='2xl'
+                boxSize={["80px","90px","125px"]}
+                color="blue.900"
+                
+                >
+                  <Icon 
+                      h="50%"
+                      w="70%"
+                      mt="20px"
+                      as={SiJavascript} 
+                      
+                    />
+                      <Text  
+                        
+                        fontSize={["8px", "10.455px", "15px"]} 
+                        >
+                        JavaScript
+                      </Text>         
+              </Box>
+
+              <Box 
+                _hover={{
+                        boxShadow:'dark-lg',
+                        transitionDuration:"300ms",
+                      }} 
+                borderRadius="15%" 
+                boxShadow='2xl'
+                boxSize={["80px","90px","125px"]}
+                color="blue.900"
+                
+                >
+                  <Icon 
+                      h="50%"
+                      w="70%"
+                      mt="20px"
+                      as={BsGithub} 
+                      
+                    />
+                      <Text  
+                        
+                        fontSize={["8px", "10.455px", "15px"]} 
+                        >
+                        Git Hub
+                      </Text>         
+              </Box>
+
+
+
+
+
     </SimpleGrid>
   </Box>
 
