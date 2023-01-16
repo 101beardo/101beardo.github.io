@@ -11,17 +11,15 @@ import { SimpleGrid } from '@chakra-ui/react'
 const Skills = () => {
   
   return (
-    <Box pt={["70px"]} id='skills' align="center" >
+    <Box w="80%"  pt={["70px"]} id='skills' align="center" >
            <Text  
               fontWeight="bold" 
               fontSize={["35px", "35px", "55px"]}
               >
               Skills
            </Text>
-          <Box  >
-            <SimpleGrid  align="center" w="65%" columns={[2, 3, 4]} spacing='80px'>
-
-
+          <Box align="center" ml={["none","none","100px"]}  >
+            <SimpleGrid  columns={[2, 3, 4]} spacing='80px'>
 
               {/* HTML */}
             <Box 

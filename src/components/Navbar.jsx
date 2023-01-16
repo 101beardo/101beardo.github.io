@@ -12,24 +12,31 @@ const Navbar = () => {
   return (
    <Box>
       <Box 
+          
           w="100%" 
           h="70px" 
           color="cyan.300"
           bg="blue.900"
           p="20px"
           display={["none","flex","flex"]}
-          justifyContent="space-between"
+          
           boxShadow='dark-lg'
           position={"fixed"}
-          fontSize='20px'
+          fontSize={['10px','13px','20px']}
           zIndex={1}
           >
+          <Box w="50%" >
           <Link style={{ textDecoration: 'none' }}  href='#header'>Home</Link>
+          </Box>
+          <Box w="70%" display="flex" justifyContent="space-evenly"  >
+          
           <Link style={{ textDecoration: 'none' }}  href="#about">About Me</Link>
           <Link style={{ textDecoration: 'none' }}  href="#skills">Skills</Link>
           <Link style={{ textDecoration: 'none' }}  href="#projects">Projects</Link>
           <Link style={{ textDecoration: 'none' }}  href="#contact">Contact</Link>
           <Link style={{ textDecoration: 'none' }}  href="https://drive.google.com/uc?export=download&id=1jf0aDcplQQDA0_FoYrKm9QOg_8_zK91a"> ⤓ Resume</Link>
+          </Box>
+          
       </Box>
 
       <Box w="100%" 

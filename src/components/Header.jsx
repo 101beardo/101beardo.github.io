@@ -10,8 +10,9 @@ const Header = () => {
   return (
       <Box 
         id='header'  
-        align={"center" }
+        align={"center"}
         pt="130px"
+        w="80%"
         >
       
         <Box 
@@ -44,7 +45,7 @@ const Header = () => {
         
        
 
-        <Box> 
+        <Box > 
               <Link 
                   style={{ textDecoration: 'none' }}  
                   href="https://drive.google.com/uc?export=download&id=1jf0aDcplQQDA0_FoYrKm9QOg_8_zK91a" >
@@ -76,7 +77,7 @@ const Header = () => {
 
 
 
-        <Box m="20px" w="80%" fontSize="20px" >
+        <Box m="20px"  fontSize="20px" >
           <Text>A Passionate Full-Stack Web Developer with Problem Solving Skills, who is always motivated and disciplined to learn new concept, when it is encountered.  
           Excited about developing scalable websites using technical skills like HTML, CSS, JavaScript, TypeScript, React, Redux, Tailwind CSS, Material-UI, and back-end skills like Node-js, express-js, MongoDB. Looking forward to further enhance my skills.
           </Text>

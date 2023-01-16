@@ -13,7 +13,7 @@ import Skills from './components/Skills';
 
 function App() {
   return (
-    <Box>
+    <Box align="center" >
      <Navbar/>
      <Header/>
      <About/>

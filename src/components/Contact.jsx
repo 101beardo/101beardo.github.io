@@ -7,7 +7,7 @@ import {AiFillTwitterSquare} from "react-icons/ai"
 
 const Contact = () => {
   return (
-    <Box align="center" pt="70px" id='contact'>
+    <Box  w="80%" align="center" pt="70px" id='contact'>
         <Text  
           fontWeight="bold" 
           fontSize={["35px", "35px", "55px"]}

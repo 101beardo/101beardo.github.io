@@ -4,8 +4,8 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <Text  >
-      Made By Tarun Sharma
+    <Text align={"right"} fontSize={["10px"]} >
+      Designed and Developed By Tarun Sharma
     </Text>
   )
 }
