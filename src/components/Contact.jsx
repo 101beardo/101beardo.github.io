@@ -7,7 +7,7 @@ import {AiFillTwitterSquare} from "react-icons/ai"
 
 const Contact = () => {
   return (
-    <Box  w="80%" align="center" pt="70px" id='contact'>
+    <Box data-testid="contact" w="80%" align="center" pt="70px" id='contact'>
         <Text  
           fontWeight="bold" 
           fontSize={["35px", "35px", "55px"]}
@@ -26,7 +26,7 @@ const Contact = () => {
         </Text>
 
 
-        <Box mt="140px" justifyContent="space-between" w={["80%","70%","60%"]}  display="flex"  >
+        <Box mt="140px" justifyContent="space-between" w={["100%","90%","60%"]}  display="flex"  >
           <Link  p="10px" href="https://www.linkedin.com/in/tarun-sharma-93008a190/" target="_blank"  rel="noreferrer"><Icon boxSize={["40px","60px","40px"]} as={BsLinkedin} /></Link>
           <Link  p="10px" href="https://github.com/101beardo" target="_blank"  rel="noreferrer"><Icon boxSize={["40px","60px","40px"]} as={FaGithub} /></Link>
           <Link  p="10px" href="https://www.hackerrank.com/_beardo_" target="_blank"  rel="noreferrer"><Icon boxSize={["40px","60px","40px"]} as={SiHackerrank} /></Link>

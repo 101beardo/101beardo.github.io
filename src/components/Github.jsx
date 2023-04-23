@@ -30,9 +30,9 @@ const Github = () => {
 
 
             <Box >
-            <Image boxShadow='dark-lg' w={["85%","70%","35%"]} borderRadius="2%" mt="50px" src="https://github-readme-stats.vercel.app/api?username=101beardo&show_icons=true" alt="101beardo" />
-            <Image boxShadow='dark-lg' w={["85%","70%","35%"]} borderRadius="2%" mt="50px"  src="https://github-readme-streak-stats.herokuapp.com/?user=101beardo" alt="101beardo" />
-            <Image boxShadow='dark-lg' w={["85%","70%","35%"]} borderRadius="2%" mt="50px"  src="https://github-readme-stats.vercel.app/api/top-langs/?username=101beardo&layout=compact" alt="101beardo" />
+            <Image data-testid="github-stats-card" boxShadow='dark-lg' w={["85%","70%","35%"]} borderRadius="2%" mt="50px" src="https://github-readme-stats.vercel.app/api?username=101beardo&show_icons=true" alt="101beardo" />
+            <Image data-testid="github-streak-stats" boxShadow='dark-lg' w={["85%","70%","35%"]} borderRadius="2%" mt="50px"  src="https://github-readme-streak-stats.herokuapp.com/?user=101beardo" alt="101beardo" />
+            <Image data-testid="github-top-langs" boxShadow='dark-lg' w={["85%","70%","35%"]} borderRadius="2%" mt="50px"  src="https://github-readme-stats.vercel.app/api/top-langs/?username=101beardo&layout=compact" alt="101beardo" />
             </Box>
 
             

@@ -11,14 +11,14 @@ import { SimpleGrid } from '@chakra-ui/react'
 const Skills = () => {
   
   return (
-    <Box w="80%"  pt={["70px"]} id='skills' align="center" >
+    <Box w="80%" data-testid="skills" pt={["70px"]} id='skills' align="center" >
            <Text  
               fontWeight="bold" 
               fontSize={["35px", "35px", "55px"]}
               >
               Skills
            </Text>
-          <Box align="center" ml={["none","none","100px"]}  >
+          <Box align="center" ml={["20px","60px","100px"]}  >
             <SimpleGrid  columns={[2, 3, 4]} spacing='80px'>
 
               {/* HTML */}
@@ -31,17 +31,18 @@ const Skills = () => {
                 boxShadow='2xl'
                 boxSize={["80px","90px","125px"]}
                 color="blue.900"
-                
+                className='skills-card'
                 >
                   <Icon 
                       h="50%"
                       w="70%"
                       mt="20px"
+                      className='skills-card-img'
                       as={SiHtml5} 
                       
                     />
                       <Text  
-                        
+                        className='skills-card-name'
                         fontSize={["8px", "10.455px", "15px"]} 
                         >
                         HTML
@@ -60,6 +61,7 @@ const Skills = () => {
                       }} 
                 borderRadius="15%" 
                 boxShadow='2xl'
+                className='skills-card'
                 boxSize={["80px","90px","125px"]}
                 color="blue.900"
                 
@@ -68,11 +70,12 @@ const Skills = () => {
                       h="50%"
                       w="70%"
                       mt="20px"
+                      className='skills-card-img'
                       as={SiCss3} 
                       
                     />
                       <Text  
-                        
+                        className='skills-card-name'
                         fontSize={["8px", "10.455px", "15px"]} 
                         >
                         CSS
@@ -93,6 +96,7 @@ const Skills = () => {
                       }} 
                 borderRadius="15%" 
                 boxShadow='2xl'
+                className='skills-card'
                 boxSize={["80px","90px","125px"]}
                 color="blue.900"
                 
@@ -101,11 +105,12 @@ const Skills = () => {
                       h="50%"
                       w="70%"
                       mt="20px"
+                      className='skills-card-img'
                       as={SiJavascript} 
                       
                     />
                       <Text  
-                        
+                        className='skills-card-name'
                         fontSize={["8px", "10.455px", "15px"]} 
                         >
                         JavaScript
@@ -124,6 +129,7 @@ const Skills = () => {
                       }} 
                 borderRadius="15%" 
                 boxShadow='2xl'
+                className='skills-card'
                 boxSize={["80px","90px","125px"]}
                 color="blue.900"
                 
@@ -132,11 +138,12 @@ const Skills = () => {
                       h="50%"
                       w="70%"
                       mt="20px"
+                      className='skills-card-img'
                       as={SiReact} 
                       
                     />
                       <Text  
-                        
+                        className='skills-card-name'
                         fontSize={["8px", "10.455px", "15px"]} 
                         >
                         React
@@ -155,6 +162,7 @@ const Skills = () => {
                       }} 
                 borderRadius="15%" 
                 boxShadow='2xl'
+                className='skills-card'
                 boxSize={["80px","90px","125px"]}
                 color="blue.900"
                 
@@ -163,11 +171,12 @@ const Skills = () => {
                       h="50%"
                       w="70%"
                       mt="20px"
+                      className='skills-card-img'
                       as={SiChakraui} 
                       
                     />
                       <Text  
-                        
+                        className='skills-card-name'
                         fontSize={["8px", "10.455px", "15px"]} 
                         >
                         Chakra UI
@@ -185,6 +194,7 @@ const Skills = () => {
                       }} 
                 borderRadius="15%" 
                 boxShadow='2xl'
+                className='skills-card'
                 boxSize={["80px","90px","125px"]}
                 color="blue.900"
                 
@@ -193,11 +203,12 @@ const Skills = () => {
                       h="50%"
                       w="70%"
                       mt="20px"
+                      className='skills-card-img'
                       as={SiRedux} 
                       
                     />
                       <Text  
-                        
+                        className='skills-card-name'
                         fontSize={["8px", "10.455px", "15px"]} 
                         >
                         Redux
@@ -217,6 +228,7 @@ const Skills = () => {
                       }} 
                 borderRadius="15%" 
                 boxShadow='2xl'
+                className='skills-card'
                 boxSize={["80px","90px","125px"]}
                 color="blue.900"
                 
@@ -225,11 +237,12 @@ const Skills = () => {
                       h="50%"
                       w="70%"
                       mt="20px"
+                      className='skills-card-img'
                       as={SiCypress} 
                       
                     />
                       <Text  
-                        
+                        className='skills-card-name'
                         fontSize={["8px", "10.455px", "15px"]} 
                         >
                         Cypress
@@ -248,6 +261,7 @@ const Skills = () => {
                       }} 
                 borderRadius="15%" 
                 boxShadow='2xl'
+                className='skills-card'
                 boxSize={["80px","90px","125px"]}
                 color="blue.900"
                 
@@ -256,11 +270,12 @@ const Skills = () => {
                       h="50%"
                       w="70%"
                       mt="20px"
+                      className='skills-card-img'
                       as={SiExpress} 
                       
                     />
                       <Text  
-                        
+                        className='skills-card-name'
                         fontSize={["8px", "10.455px", "15px"]} 
                         >
                         Express JS
@@ -279,6 +294,7 @@ const Skills = () => {
                       }} 
                 borderRadius="15%" 
                 boxShadow='2xl'
+                className='skills-card'
                 boxSize={["80px","90px","125px"]}
                 color="blue.900"
                 
@@ -287,11 +303,12 @@ const Skills = () => {
                       h="50%"
                       w="70%"
                       mt="20px"
+                      className='skills-card-img'
                       as={SiMongodb} 
                       
                     />
                       <Text  
-                        
+                        className='skills-card-name'
                         fontSize={["8px", "10.455px", "15px"]} 
                         >
                         Mongo DB
@@ -310,6 +327,7 @@ const Skills = () => {
                       }} 
                 borderRadius="15%" 
                 boxShadow='2xl'
+                className='skills-card'
                 boxSize={["80px","90px","125px"]}
                 color="blue.900"
                 
@@ -318,11 +336,12 @@ const Skills = () => {
                       h="50%"
                       w="70%"
                       mt="20px"
+                      className='skills-card-img'
                       as={SiNpm} 
                       
                     />
                       <Text  
-                        
+                        className='skills-card-name'
                         fontSize={["8px", "10.455px", "15px"]} 
                         >
                         NPM
@@ -339,6 +358,7 @@ const Skills = () => {
                       }} 
                 borderRadius="15%" 
                 boxShadow='2xl'
+                className='skills-card'
                 boxSize={["80px","90px","125px"]}
                 color="blue.900"
                 
@@ -347,11 +367,12 @@ const Skills = () => {
                       h="50%"
                       w="70%"
                       mt="20px"
+                      className='skills-card-img'
                       as={BsGithub} 
                       
                     />
                       <Text  
-                        
+                        className='skills-card-name'
                         fontSize={["8px", "10.455px", "15px"]} 
                         >
                         Git Hub
@@ -369,6 +390,7 @@ const Skills = () => {
                       }} 
                 borderRadius="15%" 
                 boxShadow='2xl'
+                className='skills-card'
                 boxSize={["80px","90px","125px"]}
                 color="blue.900"
                 
@@ -377,11 +399,12 @@ const Skills = () => {
                       h="50%"
                       w="70%"
                       mt="20px"
+                      className='skills-card-img'
                       as={FaNode} 
                       
                     />
                       <Text  
-                        
+                        className='skills-card-name'
                         fontSize={["8px", "10.455px", "15px"]} 
                         >
                         Node JS

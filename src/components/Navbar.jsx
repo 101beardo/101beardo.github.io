@@ -10,7 +10,7 @@ const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
-   <Box>
+   <Box data-testid="nav-menu" >
       <Box 
           
           w="100%" 
@@ -26,15 +26,15 @@ const Navbar = () => {
           zIndex={1}
           >
           <Box w="50%" >
-          <Link style={{ textDecoration: 'none' }}  href='#header'>Home</Link>
+          <Link className='nav-link home' style={{ textDecoration: 'none' }}  href='#header'>Home</Link>
           </Box>
           <Box w="70%" display="flex" justifyContent="space-evenly"  >
           
-          <Link style={{ textDecoration: 'none' }}  href="#about">About Me</Link>
-          <Link style={{ textDecoration: 'none' }}  href="#skills">Skills</Link>
-          <Link style={{ textDecoration: 'none' }}  href="#projects">Projects</Link>
-          <Link style={{ textDecoration: 'none' }}  href="#contact">Contact</Link>
-          <Link style={{ textDecoration: 'none' }}  href="https://drive.google.com/uc?export=download&id=1jf0aDcplQQDA0_FoYrKm9QOg_8_zK91a"> ⤓ Resume</Link>
+          <Link className='nav-link about' style={{ textDecoration: 'none' }}  href="#about">About Me</Link>
+          <Link className='nav-link skills' style={{ textDecoration: 'none' }}  href="#skills">Skills</Link>
+          <Link className='nav-link projects' style={{ textDecoration: 'none' }}  href="#projects">Projects</Link>
+          <Link className='nav-link contact' style={{ textDecoration: 'none' }}  href="#contact">Contact</Link>
+          <Link data-testid="resume-link-1" className='nav-link resume' onClick={()=> window.open("https://drive.google.com/file/d/1jf0aDcplQQDA0_FoYrKm9QOg_8_zK91a/view?usp=sharing","_blank")} style={{ textDecoration: 'none' }}  href="https://drive.google.com/uc?export=download&id=1jf0aDcplQQDA0_FoYrKm9QOg_8_zK91a"> ⤓ Resume</Link>
           </Box>
           
       </Box>
@@ -69,17 +69,17 @@ const Navbar = () => {
             align="center"
             >
               
-              <Link m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}  href='#header'>Home</Link>
+              <Link className='nav-link home' m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}  href='#header'>Home</Link>
             
-              <Link m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}  href="#about">About Me</Link>
+              <Link className='nav-link about' m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}  href="#about">About Me</Link>
               
-              <Link m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}   href="#skills">Skills</Link>
+              <Link className='nav-link skills' m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}   href="#skills">Skills</Link>
               
-              <Link m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}   href="#projects">Projects</Link>
+              <Link className='nav-link projects' m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}   href="#projects">Projects</Link>
               
-              <Link m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}  href="#contact">Contact</Link>
+              <Link className='nav-link contact' m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}  href="#contact">Contact</Link>
               
-              <Link m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}  href="https://drive.google.com/uc?export=download&id=1jf0aDcplQQDA0_FoYrKm9QOg_8_zK91a"> ⤓ Resume</Link>
+              <Link className='nav-link resume' m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}  href="https://drive.google.com/uc?export=download&id=1jf0aDcplQQDA0_FoYrKm9QOg_8_zK91a"> ⤓ Resume</Link>
               
             </Box>
             </Collapse>
