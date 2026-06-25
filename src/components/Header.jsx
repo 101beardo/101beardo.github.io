@@ -1,7 +1,10 @@
 'use client';
 import React from 'react';
-import Typewriter from 'typewriter-effect';
+import dynamic from 'next/dynamic';
 import { Box, Typography, Button, Container, Stack } from '@mui/material';
+
+const Typewriter = dynamic(() => import('typewriter-effect'), { ssr: false });
+
 
 const resumeLink = "https://drive.google.com/file/d/1z-7lu-PX5IkIqAQ7BuBR4lEOoplEJKDa/view?usp=sharing";
 

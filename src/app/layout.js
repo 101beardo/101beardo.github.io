@@ -1,13 +1,5 @@
-import { Plus_Jakarta_Sans } from 'next/font/google';
 import ThemeRegistry from '../components/ThemeRegistry';
 import './globals.css';
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-poppins',
-  display: 'swap',
-});
 
 export const metadata = {
   title: 'Tarun Sharma | Portfolio',
@@ -21,8 +13,8 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={plusJakarta.variable} style={{ scrollBehavior: 'smooth' }}>
-      <body className={plusJakarta.className}>
+    <html lang="en" style={{ scrollBehavior: 'smooth' }}>
+      <body>
         <ThemeRegistry>
           {children}
         </ThemeRegistry>

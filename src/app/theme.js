@@ -21,7 +21,7 @@ export const getTheme = (mode) => createTheme({
     },
   },
   typography: {
-    fontFamily: 'var(--font-poppins), sans-serif',
+    fontFamily: "'Plus Jakarta Sans', sans-serif",
     h1: {
       fontWeight: 800,
       letterSpacing: '-0.02em',

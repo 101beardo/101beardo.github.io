@@ -1,7 +1,10 @@
 'use client';
 import React from 'react';
+import dynamic from 'next/dynamic';
 import { Box, Typography, Container, Grid, Paper, useTheme } from '@mui/material';
-import GitHubCalendar from 'react-github-calendar';
+
+const GitHubCalendar = dynamic(() => import('react-github-calendar'), { ssr: false });
+
 
 const Github = () => {
   const theme = useTheme();
