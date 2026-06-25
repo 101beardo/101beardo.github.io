@@ -12,7 +12,6 @@ export const ColorModeContext = React.createContext({
 
 export default function ThemeRegistry({ children }) {
   const [mode, setMode] = React.useState('dark');
-  const [isMounted, setIsMounted] = React.useState(false);
 
   // Load saved theme on mount — runs only on client
   React.useEffect(() => {
@@ -20,7 +19,6 @@ export default function ThemeRegistry({ children }) {
     if (savedMode === 'light' || savedMode === 'dark') {
       setMode(savedMode);
     }
-    setIsMounted(true);
   }, []);
 
   const colorMode = React.useMemo(
@@ -38,19 +36,6 @@ export default function ThemeRegistry({ children }) {
   );
 
   const theme = React.useMemo(() => getTheme(mode), [mode]);
-
-  // Render a bare CssBaseline shell during SSR / before mount
-  // to avoid hydration mismatch from localStorage
-  if (!isMounted) {
-    return (
-      <AppRouterCacheProvider>
-        <ThemeProvider theme={getTheme('dark')}>
-          <CssBaseline />
-          <div style={{ visibility: 'hidden' }}>{children}</div>
-        </ThemeProvider>
-      </AppRouterCacheProvider>
-    );
-  }
 
   return (
     <AppRouterCacheProvider>
