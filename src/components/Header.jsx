@@ -1,106 +1,181 @@
-import React from 'react'
-import Typewriter from 'typewriter-effect'
-import { Box, Text } from '@chakra-ui/react'
-import { Link } from '@chakra-ui/react'
-import { Button} from '@chakra-ui/react'
+'use client';
+import React from 'react';
+import Typewriter from 'typewriter-effect';
+import { Box, Typography, Button, Container, Stack } from '@mui/material';
 
-// border="1px solid red"
+const resumeLink = "https://drive.google.com/file/d/1z-7lu-PX5IkIqAQ7BuBR4lEOoplEJKDa/view?usp=sharing";
 
 const Header = () => {
+  const handleResumeClick = () => {
+    window.open(resumeLink, '_blank');
+  };
+
   return (
-      <Box 
-        id='header'
-        data-testid="home"  
-        align={"center"}
-        pt="130px"
-        w="80%"
+    <Box
+      id="header"
+      data-testid="home"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        minHeight: '85vh',
+        pt: { xs: '120px', md: '140px' },
+        pb: '50px',
+        position: 'relative',
+        overflow: 'hidden',
+        backgroundColor: 'background.default',
+      }}
+    >
+      {/* Background glowing circle for premium aesthetic */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: '20%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: { xs: '300px', md: '600px' },
+          height: { xs: '300px', md: '600px' },
+          background: (theme) => theme.palette.mode === 'dark'
+            ? 'radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(9, 9, 14, 0) 70%)'
+            : 'radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(248, 250, 252, 0) 70%)',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      />
+
+      <Container maxWidth="lg" sx={{ zIndex: 1, position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+        {/* Intro Tag */}
+        <Typography
+          variant="h6"
+          sx={{
+            color: 'text.secondary',
+            fontWeight: 500,
+            mb: 1,
+            fontSize: { xs: '1rem', sm: '1.2rem' },
+          }}
         >
-      
-        <Box 
-          m={["10px","30px","30px"]}
-          fontWeight="bold" 
-          fontSize={[null,"20px","30px"]} 
-          >
-          <Box fontSize={["25px","40px","60px"]}  display="flex" w={["300px", "500px", "700px"]}>
-            <Text color="orange.900" >Hello, I'm &nbsp;</Text>
-            <Text data-testid="user-detail-name"  color="blue.900">Tarun Sharma</Text>
-          </Box>
-          
+          Hello, I'm
+        </Typography>
 
-          <Box mt="20px" >
+        {/* Name */}
+        <Typography
+          variant="h1"
+          data-testid="user-detail-name"
+          sx={{
+            fontSize: { xs: '2.5rem', sm: '3.5rem', md: '5rem' },
+            fontWeight: 800,
+            lineHeight: 1.2,
+            mb: 2,
+            background: 'linear-gradient(90deg, #6366F1 0%, #06B6D4 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          Tarun Sharma
+        </Typography>
+
+        {/* Typewriter text */}
+        <Box
+          sx={{
+            fontSize: { xs: '1.2rem', sm: '1.6rem', md: '2rem' },
+            fontWeight: 600,
+            color: 'text.primary',
+            height: '40px', // Prevents layout shifting
+            mb: 4,
+          }}
+        >
           <Typewriter
-                options={{
-                  strings: [
-                      "A MERN Stack Developer.",
-                      "A Problem Solver.",
-                  ],
-                  autoStart: true,
-                  loop: true,
-                  deleteSpeed: 80,
-                }}
-              />
-          </Box>
-              
-        </Box>
-        
-        
-       
-
-        <Box > 
-              <Link 
-                  style={{ textDecoration: 'none' }}  
-                  data-testid="resume-link-2"
-                  href="https://drive.google.com/uc?export=download&id=1jf0aDcplQQDA0_FoYrKm9QOg_8_zK91a"
-                   >
-                    <Button m="50px" 
-                      bgGradient='linear(to-r, orange.900, blue.900)'
-                      onClick={()=>{
-                        window.open("https://drive.google.com/file/d/1jf0aDcplQQDA0_FoYrKm9QOg_8_zK91a/view?usp=sharing","_blank")
-                      }}
-                      _hover={{
-                      bgGradient: 'linear(to-r, cyan.500, blue.500)',
-                      boxShadow:'dark-lg',
-                      transitionDuration:"300ms",
-                      }}    
-                      color="white">
-                      ⤓ Download Resume
-                    </Button>
-              </Link>
-              <Link
-                  style={{ textDecoration: 'none' }}  
-                  href="#contact" >
-                    <Button m="10px"
-                    _hover={{
-                      boxShadow:'dark-lg',
-                      transitionDuration:"300ms",
-                      }} 
-                    variant="outline" 
-                    colorScheme='facebook'>
-                    Let's Talk
-                    </Button>
-              </Link>
+            options={{
+              strings: [
+                'Software Engineer.',
+                'Frontend Specialist.',
+                'Problem Solver.',
+              ],
+              autoStart: true,
+              loop: true,
+              deleteSpeed: 80,
+            }}
+          />
         </Box>
 
+        {/* Short Bio */}
+        <Typography
+          data-testid="user-detail-intro"
+          variant="body1"
+          sx={{
+            color: 'text.secondary',
+            maxWidth: '700px',
+            margin: '0 auto',
+            mb: 5,
+            fontSize: { xs: '0.95rem', sm: '1.1rem' },
+            textAlign: 'center',
+            lineHeight: 1.8,
+            px: { xs: 2, sm: 4 },
+          }}
+        >
+          A results-driven Software Engineer with nearly 3 years of professional experience at Think201 delivering production-grade SaaS platforms, enterprise web applications, and cross-platform mobile apps. Specialized in building secure, real-time React/Next.js interfaces with Multi-Factor Authentication, WebSockets, and optimized state management.
+        </Typography>
 
+        {/* Call to Actions */}
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          spacing={3}
+          sx={{ 
+            width: '100%', 
+            mt: 4, 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center' 
+          }}
+        >
+          <Button
+            variant="contained"
+            onClick={handleResumeClick}
+            data-testid="resume-link-2"
+            sx={{
+              background: 'linear-gradient(90deg, #6366F1 0%, #06B6D4 100%)',
+              color: '#ffffff',
+              fontSize: '1rem',
+              fontWeight: 700,
+              padding: { xs: '12px 28px', sm: '14px 40px' },
+              borderRadius: '30px',
+              transition: 'all 0.3s ease',
+              whiteSpace: 'nowrap',
+              '&:hover': {
+                transform: 'scale(1.05)',
+                boxShadow: '0 8px 25px rgba(99, 102, 241, 0.4)',
+              },
+            }}
+          >
+            ⤓ Download Resume
+          </Button>
+          <Button
+            variant="outlined"
+            href="#contact"
+            sx={{
+              borderColor: 'primary.main',
+              color: 'primary.main',
+              fontSize: '1rem',
+              fontWeight: 600,
+              padding: { xs: '12px 28px', sm: '14px 40px' },
+              borderRadius: '30px',
+              transition: 'all 0.3s ease',
+              whiteSpace: 'nowrap',
+              '&:hover': {
+                borderColor: 'primary.main',
+                backgroundColor: 'rgba(99, 102, 241, 0.08)',
+                transform: 'scale(1.05)',
+              },
+            }}
+          >
+            Let's Talk
+          </Button>
+        </Stack>
+      </Container>
+    </Box>
+  );
+};
 
-        <Box m={["5px","10px","20px"]}  fontSize={[null,"15px","20px"]} >
-          <Text data-testid="user-detail-intro" textAlign="justify" >
-            A motivated and disciplined Full-Stack Web Developer with strong
-            problem-solving skills and a passion for learning new technologies.
-            Proficient in front-end technologies like HTML, CSS, JavaScript,
-
-            TypeScript, React, Redux, Tailwind CSS, and Material-UI, and back-
-            end skills like Node-js, express-js, and MongoDB. Eager to further
-
-            develop skills as a full-stack MERN developer and build scalable
-            websites.
-          </Text>
-        </Box> 
-
-      </Box>
-        
-
-  )
-}
-
-export default Header
+export default Header;

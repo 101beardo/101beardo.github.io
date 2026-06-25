@@ -1,92 +1,235 @@
-import React from 'react'
-import { Box, Link, useDisclosure,Button, Collapse, Icon } from '@chakra-ui/react'
-import {GiHamburgerMenu} from "react-icons/gi"
-import {CgClose} from "react-icons/cg"
+'use client';
+import React, { useState, useContext } from 'react';
+import { AppBar, Toolbar, Box, IconButton, Drawer, List, ListItem, ListItemButton, ListItemText, Container, Tooltip } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { ColorModeContext } from './ThemeRegistry';
 
+const navItems = [
+  { label: 'Home', href: '#header' },
+  { label: 'About Me', href: '#about' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
+];
 
+const resumeLink = "https://drive.google.com/file/d/1z-7lu-PX5IkIqAQ7BuBR4lEOoplEJKDa/view?usp=sharing";
 
 const Navbar = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const colorMode = useContext(ColorModeContext);
 
-  const { isOpen, onToggle } = useDisclosure()
+  const handleDrawerToggle = () => {
+    setMobileOpen((prev) => !prev);
+  };
+
+  const handleResumeClick = () => {
+    window.open(resumeLink, '_blank');
+  };
 
   return (
-   <Box data-testid="nav-menu" >
-      <Box 
-          
-          w="100%" 
-          h="70px" 
-          color="cyan.300"
-          bg="blue.900"
-          p="20px"
-          display={["none","flex","flex"]}
-          
-          boxShadow='dark-lg'
-          position={"fixed"}
-          fontSize={['10px','13px','20px']}
-          zIndex={1}
-          >
-          <Box w="50%" >
-          <Link className='nav-link home' style={{ textDecoration: 'none' }}  href='#header'>Home</Link>
-          </Box>
-          <Box w="70%" display="flex" justifyContent="space-evenly"  >
-          
-          <Link className='nav-link about' style={{ textDecoration: 'none' }}  href="#about">About Me</Link>
-          <Link className='nav-link skills' style={{ textDecoration: 'none' }}  href="#skills">Skills</Link>
-          <Link className='nav-link projects' style={{ textDecoration: 'none' }}  href="#projects">Projects</Link>
-          <Link className='nav-link contact' style={{ textDecoration: 'none' }}  href="#contact">Contact</Link>
-          <Link data-testid="resume-link-1" className='nav-link resume' onClick={()=> window.open("https://drive.google.com/file/d/1jf0aDcplQQDA0_FoYrKm9QOg_8_zK91a/view?usp=sharing","_blank")} style={{ textDecoration: 'none' }}  href="https://drive.google.com/uc?export=download&id=1jf0aDcplQQDA0_FoYrKm9QOg_8_zK91a"> ⤓ Resume</Link>
-          </Box>
-          
-      </Box>
-
-      <Box w="100%" 
-          h="70px" 
-          color="cyan.300"
-          bg="blue.900"
-          p="20px"
-          display={["flex","none","none"]}
-          boxShadow='dark-lg'
-          position={"fixed"}
-          fontSize='20px'
-          zIndex={1}
-          align="right"
-          
+    <Box sx={{ display: 'flex' }} data-testid="nav-menu">
+      <AppBar 
+        position="fixed" 
+        sx={{
+          background: (theme) => theme.palette.mode === 'dark' ? 'rgba(9, 9, 14, 0.75)' : 'rgba(248, 250, 252, 0.75)',
+          backdropFilter: 'blur(16px)',
+          borderBottom: '1px solid',
+          borderColor: (theme) => theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.06)' : 'rgba(99, 102, 241, 0.08)',
+          boxShadow: 'none',
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+        }}
       >
-        <Box w="100%">
-        {isOpen ? <Button _focus={{ bgColor: "blue.900" }} onClick={onToggle} bgColor="blue.900"  p="10px" href="https://github.com/101beardo"><Icon boxSize="25px" as={CgClose}/></Button> : <Button _focus={{ bgColor: "blue.900" }} onClick={onToggle} bgColor="blue.900"  p="10px" href="https://github.com/101beardo"><Icon boxSize="25px" as={GiHamburgerMenu}/></Button> } 
-       
-          <Collapse in={isOpen} animateOpacity>
-          <Box
-            p='90px'
-            color='cyan.300'
-            mt='4'
-            bg='blue.900'
-            rounded='md'
-            shadow='dark-lg'
-            zIndex={2}
-            display="flex"
-            flexDirection="column"
-            align="center"
+        <Container maxWidth="lg">
+          <Toolbar disableGutters sx={{ justifyContent: 'space-between', alignItems: 'center', height: 70 }}>
+            {/* Logo / Home link */}
+            <Box
+              component="a"
+              href="#header"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                fontSize: { xs: '1.2rem', sm: '1.4rem' },
+                fontWeight: 700,
+                color: 'primary.main',
+                textDecoration: 'none',
+                letterSpacing: '1px',
+                '&:hover': {
+                  color: 'secondary.main',
+                },
+                transition: 'color 0.3s',
+              }}
             >
-              
-              <Link className='nav-link home' m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}  href='#header'>Home</Link>
-            
-              <Link className='nav-link about' m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}  href="#about">About Me</Link>
-              
-              <Link className='nav-link skills' m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}   href="#skills">Skills</Link>
-              
-              <Link className='nav-link projects' m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}   href="#projects">Projects</Link>
-              
-              <Link className='nav-link contact' m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}  href="#contact">Contact</Link>
-              
-              <Link className='nav-link resume' m="10px" style={{ textDecoration: 'none' }} onClick={onToggle}  href="https://drive.google.com/uc?export=download&id=1jf0aDcplQQDA0_FoYrKm9QOg_8_zK91a"> ⤓ Resume</Link>
-              
+              TS
             </Box>
-            </Collapse>
-          </Box>
-      </Box>
-   </Box>
-  )
-}
 
-export default Navbar
+            {/* Navigation and Actions */}
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, md: 4 } }}>
+              {/* Desktop Navigation Links */}
+              <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 4, alignItems: 'center' }}>
+                {navItems.map((item) => (
+                  <Box
+                    key={item.label}
+                    component="a"
+                    href={item.href}
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      color: 'text.secondary',
+                      fontSize: '1rem',
+                      fontWeight: 500,
+                      textDecoration: 'none',
+                      transition: 'all 0.3s',
+                      position: 'relative',
+                      height: '100%',
+                      '&:hover': {
+                        color: 'primary.main',
+                      },
+                      '&::after': {
+                        content: '""',
+                        position: 'absolute',
+                        width: '0%',
+                        height: '2px',
+                        bottom: '-4px',
+                        left: '0',
+                        backgroundColor: 'primary.main',
+                        transition: 'width 0.3s',
+                      },
+                      '&:hover::after': {
+                        width: '100%',
+                      },
+                    }}
+                  >
+                    {item.label}
+                  </Box>
+                ))}
+                
+                {/* Resume Button */}
+                <Box
+                  component="a"
+                  onClick={handleResumeClick}
+                  data-testid="resume-link-1"
+                  sx={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'secondary.main',
+                    fontSize: '1rem',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    border: '1.5px solid',
+                    borderColor: 'secondary.main',
+                    borderRadius: '30px', // Pill styled
+                    padding: '6px 18px',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s',
+                    '&:hover': {
+                      backgroundColor: 'rgba(6, 182, 212, 0.1)',
+                      boxShadow: '0 0 15px rgba(6, 182, 212, 0.3)',
+                    },
+                  }}
+                >
+                  ⤓ Resume
+                </Box>
+              </Box>
+
+              {/* Theme Toggle Switcher */}
+              <Tooltip title={colorMode.mode === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'} arrow>
+                <IconButton 
+                  onClick={colorMode.toggleColorMode} 
+                  sx={{ 
+                    color: 'primary.main',
+                    backgroundColor: (theme) => theme.palette.mode === 'dark' ? 'rgba(77, 181, 255, 0.08)' : 'rgba(77, 181, 255, 0.12)',
+                    '&:hover': {
+                      backgroundColor: (theme) => theme.palette.mode === 'dark' ? 'rgba(77, 181, 255, 0.16)' : 'rgba(77, 181, 255, 0.2)',
+                    },
+                    borderRadius: '8px',
+                    p: '8px',
+                  }}
+                >
+                  {colorMode.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+                </IconButton>
+              </Tooltip>
+
+              {/* Mobile Hamburger Button */}
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ display: { md: 'none' }, color: 'primary.main', ml: 0.5 }}
+              >
+                <MenuIcon fontSize="large" />
+              </IconButton>
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
+
+      {/* Mobile Navigation Drawer */}
+      <Drawer
+        anchor="right"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{ keepMounted: true }}
+        PaperProps={{
+          sx: {
+            width: 250,
+            background: (theme) => theme.palette.background.default,
+            borderLeft: '1px solid',
+            borderColor: (theme) => theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.08)',
+            paddingTop: 8,
+          },
+        }}
+      >
+        <List sx={{ px: 2 }}>
+          {navItems.map((item) => (
+            <ListItem key={item.label} disablePadding sx={{ mb: 1 }}>
+              <ListItemButton
+                component="a"
+                href={item.href}
+                onClick={handleDrawerToggle}
+                sx={{
+                  borderRadius: '8px',
+                  color: 'text.secondary',
+                  '&:hover': {
+                    color: 'primary.main',
+                    backgroundColor: 'rgba(77, 181, 255, 0.08)',
+                  },
+                }}
+              >
+                <ListItemText primary={item.label} primaryTypographyProps={{ fontSize: '1.1rem', fontWeight: 500 }} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+          <ListItem disablePadding sx={{ mt: 2 }}>
+            <ListItemButton
+              onClick={() => {
+                handleResumeClick();
+                handleDrawerToggle();
+              }}
+              sx={{
+                borderRadius: '30px', // Pill styled
+                border: '1.5px solid',
+                borderColor: 'secondary.main',
+                color: 'secondary.main',
+                textAlign: 'center',
+                justifyContent: 'center',
+                '&:hover': {
+                  backgroundColor: 'rgba(6, 182, 212, 0.1)',
+                },
+              }}
+            >
+              <ListItemText primary="⤓ Resume" primaryTypographyProps={{ fontSize: '1.1rem', fontWeight: 600 }} />
+            </ListItemButton>
+          </ListItem>
+        </List>
+      </Drawer>
+    </Box>
+  );
+};
+
+export default Navbar;
