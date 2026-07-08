@@ -24,6 +24,8 @@ export default function ThemeRegistry({ children }: { children: ReactNode }) {
     const savedMode = localStorage.getItem('portfolio-theme-mode');
     if (savedMode === 'light' || savedMode === 'dark') {
       setMode(savedMode);
+    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      setMode('light');
     }
   }, []);
 

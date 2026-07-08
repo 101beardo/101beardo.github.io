@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Navbar from '../../../components/Navbar';
-import Footer from '../../../components/Footer';
 import { projectsData, getProjectBySlug } from '../../../data/projects';
 import CaseStudyContent from './CaseStudyContent';
 
@@ -28,12 +26,8 @@ export default function ProjectCaseStudyPage({ params }: { params: { slug: strin
   }
 
   return (
-    <>
-      <Navbar />
-      <main>
-        <CaseStudyContent project={project} />
-      </main>
-      <Footer />
-    </>
+    <main>
+      <CaseStudyContent project={project} />
+    </main>
   );
 }

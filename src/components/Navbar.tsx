@@ -1,12 +1,16 @@
 'use client';
 import React, { useState, useContext } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import { AppBar, Toolbar, Box, IconButton, Drawer, List, ListItem, ListItemButton, ListItemText, Container, Tooltip } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import SearchIcon from '@mui/icons-material/Search';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ColorModeContext } from './ThemeRegistry';
+import { resumeLink } from '../data/links';
+import { OPEN_COMMAND_PALETTE_EVENT } from './CommandPalette';
 
 const navItems = [
   { label: 'Home', href: '#header' },
@@ -17,11 +21,11 @@ const navItems = [
   { label: 'Contact', href: '#contact' },
 ];
 
-const resumeLink = "https://drive.google.com/file/d/1z-7lu-PX5IkIqAQ7BuBR4lEOoplEJKDa/view?usp=sharing";
-
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const colorMode = useContext(ColorModeContext);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prev) => !prev);
@@ -29,6 +33,15 @@ const Navbar = () => {
 
   const handleResumeClick = () => {
     window.open(resumeLink, '_blank');
+  };
+
+  const handleNavClick = (e: React.MouseEvent, hash: string) => {
+    e.preventDefault();
+    if (pathname === '/') {
+      document.getElementById(hash.replace('#', ''))?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      router.push(`/${hash}`);
+    }
   };
 
   return (
@@ -49,7 +62,8 @@ const Navbar = () => {
             {/* Logo / Home link */}
             <Box
               component="a"
-              href="#header"
+              href="/#header"
+              onClick={(e) => handleNavClick(e, '#header')}
               sx={{
                 display: 'flex',
                 alignItems: 'center',
@@ -75,7 +89,8 @@ const Navbar = () => {
                   <Box
                     key={item.label}
                     component="a"
-                    href={item.href}
+                    href={`/${item.href}`}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     sx={{
                       display: 'flex',
                       alignItems: 'center',
@@ -136,6 +151,38 @@ const Navbar = () => {
                   ⤓ Resume
                 </Box>
               </Box>
+
+              {/* Command Palette Trigger */}
+              <Tooltip title="Search (⌘K)" arrow>
+                <Box
+                  component="button"
+                  onClick={() => window.dispatchEvent(new Event(OPEN_COMMAND_PALETTE_EVENT))}
+                  aria-label="Open command palette"
+                  sx={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 0.75,
+                    color: 'text.secondary',
+                    backgroundColor: (theme) => theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.04)' : 'rgba(0, 0, 0, 0.03)',
+                    border: '1px solid',
+                    borderColor: (theme) => theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.08)',
+                    borderRadius: '8px',
+                    padding: { xs: '8px', sm: '6px 10px' },
+                    cursor: 'pointer',
+                    fontFamily: 'inherit',
+                    transition: 'all 0.3s',
+                    '&:hover': {
+                      color: 'primary.main',
+                      borderColor: 'primary.main',
+                    },
+                  }}
+                >
+                  <SearchIcon sx={{ fontSize: '1.15rem' }} />
+                  <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' }, fontSize: '0.85rem', fontWeight: 600 }}>
+                    ⌘K
+                  </Box>
+                </Box>
+              </Tooltip>
 
               {/* Theme Toggle Switcher */}
               <Tooltip title={colorMode.mode === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'} arrow>
@@ -204,8 +251,11 @@ const Navbar = () => {
             <ListItem key={item.label} disablePadding sx={{ mb: 1 }}>
               <ListItemButton
                 component="a"
-                href={item.href}
-                onClick={handleDrawerToggle}
+                href={`/${item.href}`}
+                onClick={(e) => {
+                  handleNavClick(e, item.href);
+                  handleDrawerToggle();
+                }}
                 sx={{
                   borderRadius: '8px',
                   color: 'text.secondary',

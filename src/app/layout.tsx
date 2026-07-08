@@ -2,6 +2,10 @@ import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import ThemeRegistry from '../components/ThemeRegistry';
+import CommandPalette from '../components/CommandPalette';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import PageTransition from '../components/motion/PageTransition';
 import './globals.css';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -26,7 +30,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={plusJakartaSans.variable} style={{ scrollBehavior: 'smooth' }}>
       <body>
         <ThemeRegistry>
-          {children}
+          <Navbar />
+          <PageTransition>{children}</PageTransition>
+          <Footer />
+          <CommandPalette />
         </ThemeRegistry>
       </body>
     </html>

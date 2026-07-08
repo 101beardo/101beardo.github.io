@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import type { ReactNode } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 interface RevealProps {
   children: ReactNode;
@@ -11,6 +11,12 @@ interface RevealProps {
 }
 
 const Reveal = ({ children, delay = 0, y = 24, className }: RevealProps) => {
+  const shouldReduceMotion = useReducedMotion();
+
+  if (shouldReduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}

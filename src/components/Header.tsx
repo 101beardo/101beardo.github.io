@@ -3,11 +3,9 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { Box, Typography, Button, Container, Stack } from '@mui/material';
 import Reveal from './motion/Reveal';
+import { resumeLink } from '../data/links';
 
 const Typewriter = dynamic(() => import('typewriter-effect'), { ssr: false });
-
-
-const resumeLink = "https://drive.google.com/file/d/1z-7lu-PX5IkIqAQ7BuBR4lEOoplEJKDa/view?usp=sharing";
 
 const Header = () => {
   const handleResumeClick = () => {
