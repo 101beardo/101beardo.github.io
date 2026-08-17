@@ -2,10 +2,9 @@
 import React from 'react';
 import { Box, Typography, Container, Card, CardContent, IconButton, Tooltip, TextField, Button, Alert } from '@mui/material';
 import { useForm, ValidationError } from '@formspree/react';
-import { BsLinkedin, BsWhatsapp } from 'react-icons/bs';
+import { BsLinkedin, BsWhatsapp, BsTwitterX } from 'react-icons/bs';
 import { FaGithub } from 'react-icons/fa';
 import { SiHackerrank } from 'react-icons/si';
-import { AiFillTwitterSquare } from 'react-icons/ai';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import type { IconType } from 'react-icons';
@@ -32,7 +31,7 @@ const socials: SocialLink[] = [
   { name: 'GitHub', icon: FaGithub, link: 'https://github.com/101beardo', color: '#ffffff' },
   { name: 'HackerRank', icon: SiHackerrank, link: 'https://www.hackerrank.com/_beardo_', color: '#2ec866' },
   { name: 'WhatsApp', icon: BsWhatsapp, link: 'https://wa.me/+916283837873', color: '#25d366' },
-  { name: 'Twitter', icon: AiFillTwitterSquare, link: 'https://twitter.com/_beardo__', color: '#1da1f2' },
+  { name: 'X', icon: BsTwitterX, link: 'https://twitter.com/_beardo__', color: '#71767B' },
 ];
 
 const Contact = () => {

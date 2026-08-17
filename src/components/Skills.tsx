@@ -4,7 +4,7 @@ import { Box, Typography, Container, Grid, Paper } from '@mui/material';
 import Reveal from './motion/Reveal';
 import {
   SiHtml5, SiCss3, SiJavascript, SiReact, SiChakraui, SiRedux, SiExpress, SiMongodb, SiNpm,
-  SiCypress, SiTypescript, SiNextdotjs, SiMaterialui, SiExpo, SiSocketdotio, SiSass, SiCapacitor,
+  SiCypress, SiTypescript, SiNextdotjs, SiMui, SiExpo, SiSocketdotio, SiSass, SiCapacitor,
   SiVercel, SiBitbucket, SiWebpack, SiVite, SiYarn, SiFirebase, SiRazorpay, SiGoogle, SiHotjar, SiAndroidstudio
 } from 'react-icons/si';
 import { FaNode, FaDatabase } from 'react-icons/fa';
@@ -21,7 +21,7 @@ const skillsList: Skill[] = [
   { name: 'JavaScript', icon: SiJavascript },
   { name: 'React', icon: SiReact },
   { name: 'Next.js', icon: SiNextdotjs },
-  { name: 'Material UI', icon: SiMaterialui },
+  { name: 'Material UI', icon: SiMui },
   { name: 'Chakra UI', icon: SiChakraui },
   { name: 'Redux', icon: SiRedux },
   { name: 'React Native', icon: SiReact },

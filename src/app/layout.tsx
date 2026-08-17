@@ -15,9 +15,31 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: '--font-plus-jakarta',
 });
 
+const siteUrl = 'https://101beardo.github.io';
+const title = 'Tarun Sharma | React.js Frontend Web Developer';
+const description = 'Tarun Sharma is a React.js Frontend Web Developer and Next.js Specialist with 3 years of experience building production SaaS platforms, enterprise web apps, and cross-platform mobile apps.';
+
 export const metadata: Metadata = {
-  title: 'Tarun Sharma | React.js Frontend Web Developer',
-  description: 'Tarun Sharma is a React.js Frontend Web Developer and Next.js Specialist with 3 years of experience building production SaaS platforms, enterprise web apps, and cross-platform mobile apps.',
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  keywords: ['Tarun Sharma', 'React.js Developer', 'Next.js Developer', 'Frontend Web Developer', 'TypeScript', 'Bangalore'],
+  authors: [{ name: 'Tarun Sharma', url: siteUrl }],
+  openGraph: {
+    type: 'website',
+    url: siteUrl,
+    title,
+    description,
+    siteName: 'Tarun Sharma',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+  },
+  verification: {
+    google: '2UgDQUEckP8a7gGUYenVPWgZHxikdOd8TZMV9FqZwmk',
+  },
 };
 
 export const viewport: Viewport = {

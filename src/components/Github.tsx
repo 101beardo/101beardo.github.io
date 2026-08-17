@@ -128,7 +128,7 @@ const Github = () => {
                 <Box
                   component="img"
                   data-testid="github-stats-card"
-                  src={`https://github-readme-stats.vercel.app/api?username=101beardo&show_icons=true&${statsTheme}`}
+                  src={`https://github-readme-stats-rho-five-20.vercel.app/api?username=101beardo&show_icons=true&${statsTheme}`}
                   alt="GitHub Stats"
                   sx={{ width: '100%', height: 'auto', display: 'block', borderRadius: '12px' }}
                 />
@@ -152,7 +152,7 @@ const Github = () => {
                 <Box
                   component="img"
                   data-testid="github-streak-stats"
-                  src={`https://github-readme-streak-stats.herokuapp.com/?user=101beardo&${streakTheme}`}
+                  src={`https://streak-stats.demolab.com/?user=101beardo&${streakTheme}`}
                   alt="GitHub Streak"
                   sx={{ width: '100%', height: 'auto', display: 'block', borderRadius: '12px' }}
                 />
@@ -176,7 +176,7 @@ const Github = () => {
                 <Box
                   component="img"
                   data-testid="github-top-langs"
-                  src={`https://github-readme-stats.vercel.app/api/top-langs/?username=101beardo&layout=compact&${langsTheme}`}
+                  src={`https://github-readme-stats-rho-five-20.vercel.app/api/top-langs/?username=101beardo&layout=compact&${langsTheme}`}
                   alt="Top Languages"
                   sx={{ width: '100%', height: 'auto', display: 'block', borderRadius: '12px' }}
                 />

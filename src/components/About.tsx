@@ -126,7 +126,7 @@ const About = () => {
                 <Box
                   component="img"
                   className="home-img"
-                  src="/assets/me.jpg"
+                  src="/assets/me.png"
                   alt="Tarun Sharma"
                   sx={{
                     width: '100%',

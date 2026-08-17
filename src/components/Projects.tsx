@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Box, Typography, Container, Card, CardContent, Button, Stack, Chip } from '@mui/material';
-import { SiHtml5, SiCss3, SiJavascript, SiReact, SiChakraui, SiRedux, SiExpress, SiMongodb, SiNpm, SiNextdotjs, SiMaterialui } from 'react-icons/si';
+import { SiHtml5, SiCss3, SiJavascript, SiReact, SiChakraui, SiRedux, SiExpress, SiMongodb, SiNpm, SiNextdotjs, SiMui } from 'react-icons/si';
 import { BsGithub } from 'react-icons/bs';
 import { FaNode } from 'react-icons/fa';
 import type { IconType } from 'react-icons';
@@ -24,7 +24,7 @@ const techIcons: Record<string, IconType> = {
   'Git Hub': BsGithub,
   'Node JS': FaNode,
   'Next.js': SiNextdotjs,
-  'Material UI': SiMaterialui,
+  'Material UI': SiMui,
 };
 
 const Projects = () => {
