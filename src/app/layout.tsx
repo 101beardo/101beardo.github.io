@@ -19,6 +19,31 @@ const siteUrl = 'https://101beardo.github.io';
 const title = 'Tarun Sharma | React.js Frontend Web Developer';
 const description = 'Tarun Sharma is a React.js Frontend Web Developer and Next.js Specialist with 3 years of experience building production SaaS platforms, enterprise web apps, and cross-platform mobile apps.';
 
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Tarun Sharma',
+  url: siteUrl,
+  image: `${siteUrl}/assets/me.png`,
+  jobTitle: 'React.js Frontend Web Developer',
+  description,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Bangalore',
+    addressCountry: 'IN',
+  },
+  alumniOf: [
+    { '@type': 'EducationalOrganization', name: 'Masai School' },
+    { '@type': 'EducationalOrganization', name: 'Visvesvaraya Technological University' },
+  ],
+  sameAs: [
+    'https://www.linkedin.com/in/tarun-sharma-93008a190/',
+    'https://github.com/101beardo',
+    'https://www.hackerrank.com/_beardo_',
+    'https://twitter.com/_beardo__',
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
@@ -51,6 +76,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={plusJakartaSans.variable} style={{ scrollBehavior: 'smooth' }}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <ThemeRegistry>
           <Navbar />
           <PageTransition>{children}</PageTransition>
